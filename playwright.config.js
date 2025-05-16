@@ -1,5 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+dotenv.config();
 
 /**
  * Read environment variables from file.
@@ -41,13 +43,25 @@ export default defineConfig({
   },
 
 
-  
+
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: {
         browserName: 'chromium',
+        browserVersion: '136.0',
+        'LT:Options': {
+          platform: 'Windows 10',
+          build: 'Playwright Sample Build',
+          name: 'Playwright Parallel Test',
+          user: process.env.LT_USERNAME || 'angelshrestha93',
+          accessKey: process.env.LT_ACCESS_KEY || 'LT_qau9BU8iLhMRODhbxYDRbJTqWedDKi11X317yxZZe0pDpva',
+          network: true,
+          video: true,
+          console: true,
+          tunnel: false,
+        },
       },
     },
     {
