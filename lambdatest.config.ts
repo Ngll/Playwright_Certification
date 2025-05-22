@@ -37,8 +37,8 @@ export default defineConfig({
               platform: 'macOS Catalina',
               build: 'Playwright Parallel Build',
               name: 'Firefox Test',
-              user: 'YOUR_USERNAME',
-              accessKey: 'YOUR_ACCESS_KEY',
+              user: 'angelshrestha93',
+              accessKey: 'LT_7mpDLHGPQul7462JTIxifLgGk34DsOZLaK4aazPz52ZXZiz',
               video: true,
               network: true,
               console: true
@@ -50,3 +50,5 @@ export default defineConfig({
   ],
   timeout: 60000
 });
+
+
