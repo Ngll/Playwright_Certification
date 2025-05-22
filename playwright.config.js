@@ -71,11 +71,45 @@ export default defineConfig({
       },
     },
     {
-      name: 'webkit',
+      name: 'Microsoft Edge - Windows 11',
       use: {
-        browserName: 'webkit',
+        browserName: 'chromium',
+        channel: 'msedge',
+        'LT:Options': {
+          platform: 'Windows 11',
+          build: 'LambdaTest Build - Edge',
+          name: 'Edge Test',
+          user: process.env.LT_USERNAME || 'angelshrestha93',
+          accessKey: process.env.LT_ACCESS_KEY || 'LT_qau9BU8iLhMRODhbxYDRbJTqWedDKi11X317yxZZe0pDpva',
+          network: true,
+          video: true,
+          console: true,
+        },
       },
     },
+
+    {
+      name: 'LambdaTest-Firefox',
+      use: {
+        browserName: 'firefox',
+        connectOptions: {
+          wsEndpoint: `wss://cdp.lambdatest.com/playwright?capabilities=` + encodeURIComponent(JSON.stringify({
+            browserName: 'Firefox',
+            browserVersion: 'latest',
+            'LT:Options': {
+              platform: 'macOS Catalina',
+              build: 'Playwright Parallel Build',
+              name: 'Firefox Test',
+              user: 'angelshrestha93',
+              accessKey: 'LT_7mpDLHGPQul7462JTIxifLgGk34DsOZLaK4aazPz52ZXZiz',
+              video: true,
+              network: true,
+              console: true
+            }
+          })),
+        }
+      }
+    }
 
     /* Test against mobile viewports. */
     // {
